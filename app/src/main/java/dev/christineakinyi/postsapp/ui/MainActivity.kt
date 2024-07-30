@@ -1,16 +1,11 @@
-package dev.christineakinyi.postsapp
+package dev.christineakinyi.postsapp.ui
 
-import ApiClient
+import dev.christineakinyi.postsapp.api.ApiClient
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Adapter
-import androidx.recyclerview.widget.RecyclerView.Recycler
+import dev.christineakinyi.postsapp.api.PostsApiInterface
 import dev.christineakinyi.postsapp.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback

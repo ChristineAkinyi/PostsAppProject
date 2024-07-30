@@ -1,4 +1,4 @@
-package dev.christineakinyi.postsapp
+package dev.christineakinyi.postsapp.ui
 
 data class Posts(
     var userId: Int,

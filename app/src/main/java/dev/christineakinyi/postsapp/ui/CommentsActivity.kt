@@ -1,16 +1,13 @@
-package dev.christineakinyi.postsapp
+package dev.christineakinyi.postsapp.ui
 
-import ApiClient
-import android.adservices.adid.AdId
+import dev.christineakinyi.postsapp.api.ApiClient
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import dev.christineakinyi.postsapp.model.Comments
+import dev.christineakinyi.postsapp.api.PostsApiInterface
 import dev.christineakinyi.postsapp.databinding.ActivityCommentsBinding
-import dev.christineakinyi.postsapp.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

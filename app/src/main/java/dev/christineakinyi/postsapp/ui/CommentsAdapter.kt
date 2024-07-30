@@ -1,10 +1,10 @@
-package dev.christineakinyi.postsapp
+package dev.christineakinyi.postsapp.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import dev.christineakinyi.postsapp.databinding.ActivityCommentsBinding
 import dev.christineakinyi.postsapp.databinding.CommentsListItemBinding
+import dev.christineakinyi.postsapp.model.Comments
 
 class CommentsAdapter(var commentsList: List<Comments>): RecyclerView.Adapter<CommentsAdapter.CommentsViewHolder>() {
     override fun onCreateViewHolder(
@@ -20,7 +20,7 @@ class CommentsAdapter(var commentsList: List<Comments>): RecyclerView.Adapter<Co
     override fun onBindViewHolder(holder: CommentsViewHolder, position: Int) {
         val comment = commentsList[position]
         holder.binding.tvName.text = comment.name
-        holder.binding.tvComment.text = comment.comment
+        holder.binding.tvComment.text = comment.body
     }
 
     class CommentsViewHolder(val binding: CommentsListItemBinding):RecyclerView.ViewHolder(binding.root){

@@ -1,11 +1,10 @@
-package dev.christineakinyi.postsapp
+package dev.christineakinyi.postsapp.ui
 
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import dev.christineakinyi.postsapp.databinding.ActivityMainBinding
 import dev.christineakinyi.postsapp.databinding.PostsListItemBinding
 
 class PostsAdapter(var postsList: List<Posts>, val context: Context): RecyclerView.Adapter<PostsViewHolder>() {

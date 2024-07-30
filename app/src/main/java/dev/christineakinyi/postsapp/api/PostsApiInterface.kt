@@ -1,5 +1,7 @@
-package dev.christineakinyi.postsapp
+package dev.christineakinyi.postsapp.api
 
+import dev.christineakinyi.postsapp.model.Comments
+import dev.christineakinyi.postsapp.ui.Posts
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
