@@ -13,7 +13,6 @@ class PostsAdapter(var postsList: List<Posts>, val context: Context): RecyclerVi
         return PostsViewHolder(binding)
     }
 
-
     override fun getItemCount(): Int {
         return postsList.size
     }

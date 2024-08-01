@@ -14,7 +14,8 @@ import retrofit2.Response
 
 class CommentsActivity : AppCompatActivity() {
    private var postId = 0
-   private lateinit var binding: ActivityCommentsBinding
+    val TAG  = "MYTAG"
+    private lateinit var binding: ActivityCommentsBinding
    private lateinit var commentsAdapter: CommentsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +38,7 @@ class CommentsActivity : AppCompatActivity() {
     }
 
     fun fetchPost(postId: Int){
-        val apiClient = ApiClient.buildApiInterface(PostsApiInterface::class.java)
+        val apiClient = ApiClient.buildApiClient(PostsApiInterface::class.java)
         val request = apiClient.fetchPostsById(postId)
 
         request.enqueue(object : Callback<Posts> {
@@ -60,7 +61,7 @@ class CommentsActivity : AppCompatActivity() {
     }
 
     private fun fetchCommentsByPostID(postId: Int){
-        val apiClient = ApiClient.buildApiInterface(PostsApiInterface::class.java)
+        val apiClient = ApiClient.buildApiClient(PostsApiInterface::class.java)
         val request = apiClient.fetchCommentsByPostId(postId)
         request.enqueue(object : Callback<List<Comments>> {
             override fun onResponse(p0: Call<List<Comments>>, p1: Response<List<Comments>>) {
