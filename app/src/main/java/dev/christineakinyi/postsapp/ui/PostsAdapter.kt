@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import dev.christineakinyi.postsapp.databinding.PostsListItemBinding
+import dev.christineakinyi.postsapp.model.Posts
 
 class PostsAdapter(var postsList: List<Posts>, val context: Context): RecyclerView.Adapter<PostsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostsViewHolder {
@@ -32,6 +33,5 @@ class PostsAdapter(var postsList: List<Posts>, val context: Context): RecyclerVi
 }
 
 class PostsViewHolder(val binding: PostsListItemBinding) :
-RecyclerView.ViewHolder(binding.root){
+RecyclerView.ViewHolder(binding.root)
 
-}

@@ -2,7 +2,7 @@ package dev.christineakinyi.postsapp.repository
 
 import dev.christineakinyi.postsapp.api.ApiClient
 import dev.christineakinyi.postsapp.api.PostsApiInterface
-import dev.christineakinyi.postsapp.ui.Posts
+import dev.christineakinyi.postsapp.model.Posts
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response

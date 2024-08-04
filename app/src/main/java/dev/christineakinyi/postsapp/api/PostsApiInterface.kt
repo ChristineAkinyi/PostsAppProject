@@ -1,7 +1,7 @@
 package dev.christineakinyi.postsapp.api
 
 import dev.christineakinyi.postsapp.model.Comments
-import dev.christineakinyi.postsapp.ui.Posts
+import dev.christineakinyi.postsapp.model.Posts
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.GET

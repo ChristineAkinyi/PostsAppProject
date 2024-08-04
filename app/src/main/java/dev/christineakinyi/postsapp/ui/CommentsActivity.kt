@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dev.christineakinyi.postsapp.model.Comments
 import dev.christineakinyi.postsapp.api.PostsApiInterface
 import dev.christineakinyi.postsapp.databinding.ActivityCommentsBinding
+import dev.christineakinyi.postsapp.model.Posts
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

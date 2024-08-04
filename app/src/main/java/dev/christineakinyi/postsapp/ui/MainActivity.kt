@@ -1,21 +1,15 @@
 package dev.christineakinyi.postsapp.ui
 
-import android.content.res.Configuration
-import dev.christineakinyi.postsapp.api.ApiClient
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import dev.christineakinyi.postsapp.api.PostsApiInterface
 import dev.christineakinyi.postsapp.databinding.ActivityMainBinding
+import dev.christineakinyi.postsapp.model.Posts
 import dev.christineakinyi.postsapp.viewmodel.PostsViewModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -24,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Log.d(TAG, "ONCREATE")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         postsViewModel.fetchPosts()
@@ -38,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         postsViewModel.postsLiveData.observe(this, Observer { postsList->
             displayPosts(postsList)
+            Log.d(TAG, "ONRESUME")
         })
 
         postsViewModel.errorLiveData.observe(this, Observer { error->
@@ -45,26 +40,27 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    override fun onCreate() {
-        super.onCreate()
-        Log.d(TAG, "onCreate")
-    }
+//    override fun onCreate() {
+//        super.onCreate()
+//        Log.d(TAG, "onCreate")
+//    }
 
   override fun onStart(){
       super.onStart()
-      Log.d(TAG, "onStart")
+      Log.d(TAG, "MAINACTIVITYTAG ONSTART")
   }
 
-    override fun onResume(){
-        super.onResume()
-        Log.d(TAG, "onResume")
-    }
+//    override fun onResume(){
+//        super.onResume()
+//        Log.d(TAG, "onResume")
+//    }
     override fun onPause() {
         super.onPause()
-        Log.d(TAG, "onPause")
+        Log.d(TAG, "MAINACTIVITYTAG ONPAUSE")
     }
     override fun onStop() {
         super.onStop()
+        Log.d(TAG, "MAINACTIVITYTAG ONSTOP")
     }
 
     override fun onDestroy() {

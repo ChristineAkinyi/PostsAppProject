@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.christineakinyi.postsapp.repository.PostsRepository
-import dev.christineakinyi.postsapp.ui.Posts
+import dev.christineakinyi.postsapp.model.Posts
 import kotlinx.coroutines.launch
 
 class PostsViewModel: ViewModel() {
