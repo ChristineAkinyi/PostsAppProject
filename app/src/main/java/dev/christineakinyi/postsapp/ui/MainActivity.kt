@@ -16,12 +16,14 @@ class MainActivity : AppCompatActivity() {
     val postsViewModel: PostsViewModel by viewModels()
     val TAG = "MAINACTIVTYTAG"
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "ONCREATE")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         postsViewModel.fetchPosts()
+//        postsViewModel.fetchPostsById()
 //        fetchPosts()
         binding.rvPosts.layoutManager = LinearLayoutManager(this)
     }

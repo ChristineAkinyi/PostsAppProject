@@ -12,8 +12,9 @@ interface PostsApiInterface {
     suspend fun fetchPosts(): Response<List<Posts>>
 
     @GET("/posts/{postId}")
-    fun fetchPostsById(@Path("postId") postId:Int): Call<Posts>
+    suspend  fun fetchPostsById(@Path("postId") postId:Int): Response<Posts>
 
     @GET("/posts/{postId}/comments")
-    fun fetchCommentsByPostId(@Path("postId") postId: Int): Call<List<Comments>>
+    suspend fun fetchComments(@Path("postId") postId: Int) : Response<List<Comments>>
+//  fun fetchCommentsByPostId(@Path("postId") postId: Int): Call<List<Comments>>
 }
