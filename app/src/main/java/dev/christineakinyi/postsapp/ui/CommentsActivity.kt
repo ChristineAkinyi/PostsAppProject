@@ -34,7 +34,7 @@ class CommentsActivity : AppCompatActivity() {
         val extra = intent.extras
         if (extra != null) {
             postId = extra.getInt("POST_ID")
-            postsViewModel.fetchPosts()
+            postsViewModel.fetchPostsById(postId)
             postsViewModel.fetchComments(postId)
 
         }

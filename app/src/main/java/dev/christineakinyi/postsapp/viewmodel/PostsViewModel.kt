@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.christineakinyi.postsapp.model.Comments
+import dev.christineakinyi.postsapp.model.PostRequest
 import dev.christineakinyi.postsapp.repository.PostsRepository
 import dev.christineakinyi.postsapp.model.Posts
 import kotlinx.coroutines.launch
@@ -14,6 +15,7 @@ class PostsViewModel: ViewModel() {
     val postsLiveData = MutableLiveData<List<Posts>>()
     val postLiveData = MutableLiveData<Posts>()
     val commentsLiveData = MutableLiveData<List<Comments>>()
+    val createPostLiveData = MutableLiveData<String>()
 
     fun fetchPosts(){
         viewModelScope.launch {
@@ -46,6 +48,20 @@ class PostsViewModel: ViewModel() {
                 commentsLiveData.postValue(response.body())
             } else{
                 errorLiveData.postValue(response.errorBody()?.string())
+            }
+        }
+    }
+
+    fun createPost(postRequest: PostRequest){
+//        launching a coroutine
+        viewModelScope.launch {
+            val response = postsRepo.createPost(postRequest)
+            if(response.isSuccessful){
+                createPostLiveData.postValue("Post created successfully")
+            }
+            else {
+                errorLiveData.postValue(response.errorBody()?.string())
+
             }
         }
     }

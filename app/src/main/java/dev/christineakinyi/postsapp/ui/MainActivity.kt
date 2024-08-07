@@ -1,5 +1,6 @@
 package dev.christineakinyi.postsapp.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 //    posts repo only does call apis
-
+//where you receive click events
     override fun onResume() {
         super.onResume()
         postsViewModel.postsLiveData.observe(this, Observer { postsList->
@@ -40,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         postsViewModel.errorLiveData.observe(this, Observer { error->
             Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
         })
+        binding.fabAddPost.setOnClickListener{
+            startActivity(Intent(this, CreatePostActivity::class.java))
+        }
     }
 
 //    override fun onCreate() {

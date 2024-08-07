@@ -47,4 +47,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPostBody"
         tools:listitem="@layout/comments_list_item"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
