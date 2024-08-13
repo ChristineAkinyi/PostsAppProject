@@ -15,7 +15,7 @@ import dev.christineakinyi.postsapp.viewmodel.PostsViewModel
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     val postsViewModel: PostsViewModel by viewModels()
-    val TAG = "MAINACTIVTYTAG"
+    val TAG = "MYTAG"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

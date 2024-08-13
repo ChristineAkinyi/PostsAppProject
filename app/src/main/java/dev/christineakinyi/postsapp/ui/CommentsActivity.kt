@@ -6,8 +6,10 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import dev.christineakinyi.postsapp.R
 import dev.christineakinyi.postsapp.model.Comments
 import dev.christineakinyi.postsapp.api.PostsApiInterface
 import dev.christineakinyi.postsapp.databinding.ActivityCommentsBinding
@@ -23,13 +25,18 @@ class CommentsActivity : AppCompatActivity() {
     val postsViewModel : PostsViewModel by viewModels()
     val TAG = "MYTAG"
     private lateinit var binding: ActivityCommentsBinding
-    private lateinit var commentsAdapter: CommentsAdapter
+//    private lateinit var commentsAdapter: CommentsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "COMMENTSACTIVITY ONCREATE")
         binding = ActivityCommentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.baseline_arrow_back_24)
 
         val extra = intent.extras
         if (extra != null) {
@@ -78,6 +85,12 @@ class CommentsActivity : AppCompatActivity() {
         super.onDestroy()
         Log.d(TAG, "COMMENTSACTIVITY ONDESTROY")
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
+    }
+
 
 
 

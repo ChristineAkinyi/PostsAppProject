@@ -18,6 +18,7 @@ import dev.christineakinyi.postsapp.viewmodel.PostsViewModel
 class CreatePostActivity : AppCompatActivity() {
     lateinit var binding: ActivityCreatePostBinding
     val postsViewModel: PostsViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreatePostBinding.inflate(layoutInflater)
@@ -34,13 +35,13 @@ class CreatePostActivity : AppCompatActivity() {
         binding.btnPost.setOnClickListener{ validatePost()}
 
         postsViewModel.createPostLiveData.observe(this){ message ->
-            binding.progressBar2.visibility = View.GONE
+            binding.progressBar.visibility = View.GONE
             Toast.makeText(this, message, Toast.LENGTH_LONG).show()
             clearForm()
         }
 
         postsViewModel.errorLiveData.observe(this){ error ->
-            binding.progressBar2.visibility = View.GONE
+            binding.progressBar.visibility = View.GONE
             Toast.makeText(this, error, Toast.LENGTH_LONG).show()
         }
     }
@@ -67,7 +68,7 @@ class CreatePostActivity : AppCompatActivity() {
         }
 
         if(!error){
-            binding.progressBar2.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.VISIBLE
             val postRequest = PostRequest(userId = userId.toInt(), title = title, body = body)
             postsViewModel.createPost(postRequest)
         }
